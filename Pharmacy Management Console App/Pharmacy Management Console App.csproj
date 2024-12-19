@@ -97,15 +97,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\ApplicationDbContext.cs" />
-    <Compile Include="Migrations\202412190200012_InitialCreate.cs" />
-    <Compile Include="Migrations\202412190200012_InitialCreate.designer.cs">
-      <DependentUpon>202412190200012_InitialCreate.cs</DependentUpon>
+    <Compile Include="Core\Interfaces\IAuthService.cs" />
+    <Compile Include="Core\Interfaces\IDataService.cs" />
+    <Compile Include="Core\Models\Purchase.cs" />
+    <Compile Include="Core\Models\PurchaseDetail.cs" />
+    <Compile Include="Core\Models\Supplier.cs" />
+    <Compile Include="Core\Models\OrderDetail.cs" />
+    <Compile Include="Core\Models\Medicine.cs" />
+    <Compile Include="Core\Models\Category.cs" />
+    <Compile Include="Core\Models\Customer.cs" />
+    <Compile Include="Core\Models\Order.cs" />
+    <Compile Include="Infrastructure\Data\ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\Data\Migrations\202412191231548_InitialMigration.cs" />
+    <Compile Include="Infrastructure\Data\Migrations\202412191231548_InitialMigration.designer.cs">
+      <DependentUpon>202412191231548_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\BaseEntity.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Infrastructure\Data\Migrations\Configuration.cs" />
+    <Compile Include="Core\Models\User.cs" />
+    <Compile Include="Infrastructure\Services\AuthServices.cs" />
+    <Compile Include="Infrastructure\Services\DataService.cs" />
+    <Compile Include="Presentation\Menus\LoginMenu.cs" />
+    <Compile Include="Presentation\Menus\MainMenu.cs" />
+    <Compile Include="Presentation\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -113,14 +126,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Services\Interfaces\" />
-    <Folder Include="Utils\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202412190200012_InitialCreate.resx">
-      <DependentUpon>202412190200012_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Infrastructure\Data\Migrations\202412191231548_InitialMigration.resx">
+      <DependentUpon>202412191231548_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
